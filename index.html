@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Downloader | Save Your Videos</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free Video Downloader for public and personal videos. Download MP4 videos easily.">
+<meta name="keywords" content="video downloader, mp4 downloader, online video save">
+<meta name="author" content="Video Tool">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#020617;
+  color:#fff;
+}
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+}
+h1{
+  text-align:center;
+  color:#38bdf8;
+}
+input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  font-size:16px;
+  margin-top:10px;
+}
+button{
+  width:100%;
+  margin-top:15px;
+  padding:12px;
+  background:#38bdf8;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+}
+button:hover{
+  background:#0ea5e9;
+}
+.box{
+  margin-top:20px;
+  background:#0f172a;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+a.download{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 15px;
+  background:#22c55e;
+  color:#000;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+.note{
+  font-size:13px;
+  opacity:.7;
+  margin-top:10px;
+}
+footer{
+  margin-top:25px;
+  text-align:center;
+  font-size:14px;
+  opacity:.7;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🎥 Video Downloader</h1>
+
+<p>Paste **direct MP4 / public video link**:</p>
+<input id="videoURL" placeholder="https://example.com/video.mp4">
+
+<button onclick="downloadVideo()">Download Video</button>
+
+<div class="box" id="result">
+  Your download link will appear here...
+</div>
+
+<p class="note">
+⚠️ Only download videos you own or have permission to use.
+</p>
+
+<footer>
+© 2025 Video Downloader Tool
+</footer>
+
+</div>
+
+<script>
+function downloadVideo(){
+  const url = document.getElementById("videoURL").value;
+
+  if(url === ""){
+    alert("Please enter a video URL");
+    return;
+  }
+
+  document.getElementById("result").innerHTML = `
+    <p><b>Video Ready:</b></p>
+    <a class="download" href="${url}" download>⬇ Download MP4</a>
+  `;
+}
+</script>
+
+</body>
+</html>
